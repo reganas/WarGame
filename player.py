@@ -32,7 +32,7 @@ class Player:
         else:
             self._cards.append(new_cards)
             
-    def play_card(self):
+    def play_card(self) -> Union[Card, None]:
         # Play the top card from the player's pile.
         # return: The top card, none in the pile is empty
         if not self._cards:

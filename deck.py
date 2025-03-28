@@ -2,11 +2,12 @@ import random
 from card import Card
 
 class Deck:
+    RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+    SUITS = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+    
     def __init__(self):
         # Initialize a standard deck of 52 playing cards.
-        suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
-        ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
-        self._cards = [Card(suit, rank) for suit in suits for rank in ranks]
+        self._cards = [Card(suit, rank) for suit in Deck.SUITS for rank in Deck.RANKS]
         
     def __str__(self):
         # Return a string representation of the deck.
@@ -37,8 +38,7 @@ class Deck:
     def deal_one(self):
         # Deal one card from the deck.
         if not self._cards:
-            return None
+            raise ValueError("The deck is empty. Cannot deal a card.")
         return self._cards.pop(0)
-        
-        
-        
+
+

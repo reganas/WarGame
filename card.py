@@ -1,14 +1,14 @@
 class Card:
+    VALID_SUITS = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+    VALID_RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+    
     def __init__(self, suit, rank):
+        
         """
         Initialize a card with a suit and rank.
         :param suit: The suit of the card (e.g., 'Hearts', 'Diamonds', 'Clubs', 'Spades').
         :param rank: The rank of the card (e.g., '2', '3', ..., 'King', 'Ace').
         """
-        if suit not in ['Hearts', 'Diamonds', 'Clubs', 'Spades']:
-            raise ValueError("Invalid suit. Must be 'Hearts', 'Diamonds', 'Clubs', or 'Spades'.")
-        if rank not in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']:
-            raise ValueError("Invalid rank. Must be one of '2', '3', ..., 'King', 'Ace'.")
         self._suit = suit
         self._rank = rank
         
@@ -22,7 +22,7 @@ class Card:
     
     @suit.setter
     def suit(self, value):
-        if value not in ['Hearts', 'Diamonds', 'Clubs', 'Spades']:
+        if value not in Card.VALID_SUITS:
             raise ValueError("Invalid suit. Must be 'Hearts', 'Diamonds', 'Clubs', or 'Spades'.")
         self._suit = value
         
@@ -32,9 +32,8 @@ class Card:
         
     @rank.setter
     def rank(self, value):
-        valid_ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
-        if value not in valid_ranks:
-            raise ValueError(f"Invalid rank. Must be one of {valid_ranks}.")
+        if value not in Card.VALID_RANKS:
+            raise ValueError(f"Invalid rank. Must be one of {Card.VALID_RANKS}.")
         self._rank = value
         
     def __str__(self):
