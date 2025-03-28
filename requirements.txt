@@ -2,7 +2,7 @@
 
 #### **1. Players**
 
-- The game typically has **two players**, but you could design it to support more if desired.
+- The game has **two players**.
 
 #### **2. Deck Setup**
 
@@ -42,55 +42,3 @@
 #### **5. Winning the Game**
 
 - The game ends when one player has all the cards or another termination condition (like a maximum number of rounds).
-    
-
-### **Additional Features (Optional)**
-
-- **Enhance the Gameplay**:
-    
-    - Add the ability to track the number of rounds played.
-        
-    - Detect and handle infinite games (loops due to repeating card configurations).
-        
-    - Print/log the cards played in each round and the winner.
-        
-    - Add user input for decisions, such as whether to continue the game after a certain number of rounds.
-        
-- **Visualize the Game**:
-    
-    - Display the cards in a more user-friendly way (e.g., `5 of Hearts`).
-        
-    - Use a library like `pygame` for a graphical interface (optional).
-        
-- **Improve Randomization**:
-    
-    - Use Python's `random.shuffle()` to ensure the deck is shuffled before dealing.
-        
-- **Error Handling**:
-    
-    - Ensure the game handles edge cases, such as a player running out of cards during a war.
-        
-
-### **Technical Requirements**
-
-1. **Language/Tools**:
-    
-    - Use **Python 3.x**.
-        
-    - Leverage built-in libraries like `random` for shuffling.
-        
-2. **Classes/Objects**:
-    
-    - A `Card` class to represent individual cards (rank, suit).
-        
-    - A `Deck` class to manage the deck (shuffle, deal).
-        
-    - A `Player` class to manage each player's pile of cards.
-        
-    - A `Game` class to handle the overall flow of the game.
-        
-3. **Data Structures**:
-    
-    - Use a list to represent the card pile for each player.
-        
-    - Append cards to the bottom and pop from the top of the list.
