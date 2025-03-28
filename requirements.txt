@@ -1,0 +1,96 @@
+### **Game Requirements**
+
+#### **1. Players**
+
+- The game typically has **two players**, but you could design it to support more if desired.
+
+#### **2. Deck Setup**
+
+- Use a **standard 52-card deck**, where each card has:
+    
+    - A rank (e.g., `2-10`, `J`, `Q`, `K`, `A`).
+        
+    - A suit (e.g., `hearts`, `diamonds`, `clubs`, `spades`).
+        
+- Cards should have a **value** assigned to ranks for comparison purposes (e.g., Ace = highest).
+    
+#### **3. Dealing the Cards**
+
+- Shuffle the deck and **deal cards evenly** to both players. Each player starts with their own pile of cards.
+    
+#### **4. Gameplay**
+
+- The game is played in **rounds**:
+    
+    1. Both players draw the top card from their piles.
+        
+    2. Compare the values of the two cards:
+        
+        - **Higher value wins**: The player with the higher card takes both cards and places them at the bottom of their pile.
+            
+        - **Tie** (war): If both cards have the same value:
+            
+            - Each player places three cards face-down and one card face-up (if they have enough cards). The face-up cards are compared.
+                
+            - The winner of the war takes all the cards.
+                
+            - If there's another tie, repeat the process until there’s a winner or a player runs out of cards.
+                
+    3. Players continue drawing cards until one player runs out of cards, losing the game.
+        
+
+#### **5. Winning the Game**
+
+- The game ends when one player has all the cards or another termination condition (like a maximum number of rounds).
+    
+
+### **Additional Features (Optional)**
+
+- **Enhance the Gameplay**:
+    
+    - Add the ability to track the number of rounds played.
+        
+    - Detect and handle infinite games (loops due to repeating card configurations).
+        
+    - Print/log the cards played in each round and the winner.
+        
+    - Add user input for decisions, such as whether to continue the game after a certain number of rounds.
+        
+- **Visualize the Game**:
+    
+    - Display the cards in a more user-friendly way (e.g., `5 of Hearts`).
+        
+    - Use a library like `pygame` for a graphical interface (optional).
+        
+- **Improve Randomization**:
+    
+    - Use Python's `random.shuffle()` to ensure the deck is shuffled before dealing.
+        
+- **Error Handling**:
+    
+    - Ensure the game handles edge cases, such as a player running out of cards during a war.
+        
+
+### **Technical Requirements**
+
+1. **Language/Tools**:
+    
+    - Use **Python 3.x**.
+        
+    - Leverage built-in libraries like `random` for shuffling.
+        
+2. **Classes/Objects**:
+    
+    - A `Card` class to represent individual cards (rank, suit).
+        
+    - A `Deck` class to manage the deck (shuffle, deal).
+        
+    - A `Player` class to manage each player's pile of cards.
+        
+    - A `Game` class to handle the overall flow of the game.
+        
+3. **Data Structures**:
+    
+    - Use a list to represent the card pile for each player.
+        
+    - Append cards to the bottom and pop from the top of the list.
